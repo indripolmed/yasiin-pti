@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.env
+*.db
+backend/models/*.joblib
+backend/models/*.json
+!backend/models/.gitkeep
+secrets/
+nginx/certbot/
+nginx/templates/https.inc.template

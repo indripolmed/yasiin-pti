@@ -1,0 +1,76 @@
+<!doctype html>
+<!--
+  Contoh halaman program ysii.org yang sudah terintegrasi dengan sistem.
+  Yang WAJIB hanya langkah 1. Langkah lain opsional dan meningkatkan kualitas data.
+-->
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pelatihan Barista Profesional di Medan Bersertifikat | YSII</title>
+  <meta name="description" content="Pelatihan barista 3 hari di Medan, praktik langsung dengan mesin espresso, bersertifikat. Batch November 2026 — daftar atau konsultasi via WhatsApp.">
+  <link rel="canonical" href="https://ysii.org/program/barista">
+
+  <!-- 1. WAJIB: tracker (satu baris). Di WordPress cukup pasang plugin integration/wordpress. -->
+  <script src="https://api.ysii.org/static/tracker.js" defer
+          data-privacy-url="https://ysii.org/kebijakan-privasi"></script>
+
+  <!-- 2. Slug program. Tidak perlu jika URL sudah berpola /program/<slug>. -->
+  <meta name="ysii:program" content="barista">
+
+  <!-- 3. SEO: schema markup Course (rich result Google) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Pelatihan Barista Profesional",
+    "description": "Pelatihan barista 3 hari di Medan dengan sertifikat.",
+    "provider": { "@type": "EducationalOrganization", "name": "Yayasan Sinergi Inspirasi Indonesia", "sameAs": "https://ysii.org" },
+    "hasCourseInstance": { "@type": "CourseInstance", "courseMode": "onsite", "location": "Jl. Darussalam No. 16/22, Medan", "startDate": "2026-11-10" },
+    "offers": { "@type": "Offer", "price": "2000000", "priceCurrency": "IDR", "category": "Paid" }
+  }
+  </script>
+</head>
+<body>
+  <h1>Pelatihan Barista Profesional</h1>
+  <p>Materi, fasilitas, profil instruktur, testimoni alumni ...</p>
+
+  <!-- 4. Bagian biaya/jadwal: beri id="harga" (atau data-track="view_price") agar tercatat saat dilihat -->
+  <section id="harga">
+    <h2>Biaya &amp; Jadwal</h2>
+    <p>Rp 2.000.000 — Batch 10 November 2026</p>
+  </section>
+
+  <!-- 5. Tombol WhatsApp biasa. Tracker otomatis menambahkan "(Kode: XXXXXX)" ke pesan,
+          sehingga admin bisa menghubungkan chat dengan riwayat kunjungan. -->
+  <a href="https://wa.me/6281234567890?text=Halo%20admin%2C%20saya%20tertarik%20pelatihan%20barista">Chat WhatsApp</a>
+
+  <!-- 6. Brosur PDF otomatis tercatat sebagai "unduh brosur" -->
+  <a href="/wp-content/uploads/brosur-barista.pdf">Unduh brosur</a>
+
+  <!-- 7. Form pendaftaran yang SUDAH ADA tidak perlu diubah: tracker menyalin isinya ke sistem
+          lead saat dikirim, dan form tetap diproses seperti biasa oleh website. -->
+  <h2>Form Pendaftaran</h2>
+  <form action="/form-pendaftaran-yang-sudah-ada" method="post">
+    <label>Nama <input name="nama" required></label>
+    <label>No. WhatsApp <input name="no_hp" type="tel" required></label>
+    <label>Program
+      <select name="program"><option value="barista">Pelatihan Barista</option></select>
+    </label>
+    <button type="submit">Daftar</button>
+  </form>
+
+  <!-- 7b. ALTERNATIF jika belum punya form: kirim langsung ke API lalu diarahkan ke halaman terima kasih.
+  <form action="https://api.ysii.org/v1/leads" method="post">
+    <input name="nama" required> <input name="no_hp" type="tel" required>
+    <input type="hidden" name="program" value="barista">
+    <input type="hidden" name="_redirect" value="https://ysii.org/terima-kasih">
+    <input name="website" style="display:none" tabindex="-1" autocomplete="off">  (anti-spam)
+    <button type="submit">Daftar</button>
+  </form>
+  -->
+
+  <!-- 8. Widget rekomendasi program & ajakan sesuai minat pengunjung (WordPress: shortcode [ysii_reco]) -->
+  <div id="ysii-reco" data-whatsapp="6281234567890" data-daftar-url="https://ysii.org/pendaftaran"></div>
+</body>
+</html>

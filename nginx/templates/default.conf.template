@@ -1,0 +1,24 @@
+# Template diproses oleh image nginx (envsubst): ${API_DOMAIN} diganti dari environment.
+
+# Resolver DNS Docker: alamat container API di-resolve ulang setiap request,
+# sehingga nginx tidak 502 setelah container API dibuat ulang (update/deploy).
+resolver 127.0.0.11 valid=10s ipv6=off;
+map $host $api_upstream { default api:8000; }
+
+server {
+    listen 80;
+    server_name ${API_DOMAIN};
+
+    location /.well-known/acme-challenge/ { root /var/www/certbot; }
+
+    # Sebelum sertifikat ada, layani HTTP saja (lihat README langkah HTTPS)
+    location / {
+        if (-f /etc/letsencrypt/live/${API_DOMAIN}/fullchain.pem) { return 301 https://$host$request_uri; }
+        proxy_pass http://$api_upstream;
+        proxy_set_header Host $host;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+}
+
+include /etc/nginx/conf.d/https.inc*;

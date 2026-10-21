@@ -2,6 +2,9 @@
 
 **Untuk Prediksi Perilaku Calon Peserta Pelatihan — Mitra: Yayasan Sinergi Inspirasi Indonesia (https://ysii.org)**
 
+> **Status implementasi:** sistem pada panduan ini sudah dibangun di repositori ini. Lihat [README](../README.md) untuk cara menjalankan dan deploy, dan [integration/README.md](../integration/README.md) untuk cara memasangnya di website ysii.org (form website + WhatsApp).
+> Perbedaan dari rancangan awal di bawah: (1) ada **dua model**, yaitu *lead → peserta* untuk prioritas lead dan *pengunjung → lead* untuk rekomendasi; (2) fitur "hari sejak kunjungan terakhir" diganti "rentang keterlibatan", karena yang pertama membocorkan label; (3) chat WhatsApp dihubungkan ke pengunjung lewat **kode referensi** otomatis di pesan WA.
+
 Dokumen ini adalah panduan teknis pelaksanaan proposal PTI 2026. Urutannya mengikuti 6 tahap dan jadwal 12 minggu di proposal (BAB 3 & Tabel 4.2), dan dirancang agar sistem **ditempel (diintegrasikan) ke website ysii.org yang sudah ada, tanpa membangun ulang website tersebut**.
 
 ---

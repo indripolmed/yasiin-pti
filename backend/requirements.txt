@@ -1,0 +1,16 @@
+fastapi==0.158.0
+python-multipart==0.0.32
+uvicorn[standard]==0.54.0
+SQLAlchemy==2.1.6
+psycopg[binary]==3.3.6
+pydantic==2.14.1
+pydantic-settings==2.16.1
+PyJWT==2.15.1
+scikit-learn==1.9.1
+pandas==3.0.6
+numpy==2.5.4
+joblib==1.6.0
+httpx==0.28.1
+APScheduler==3.11.3
+google-api-python-client==2.201.0
+google-auth==2.62.0
