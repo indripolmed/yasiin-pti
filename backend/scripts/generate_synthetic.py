@@ -64,7 +64,7 @@ def main() -> None:
     now = datetime.now(timezone.utc)
     n_leads = n_conv = 0
     for _ in range(args.visitors):
-        vid = str(uuid.uuid4())
+        vid = str(uuid.UUID(int=rnd.getrandbits(128), version=4))
         intent = rnd.betavariate(1.2, 4)  # minat tersembunyi 0..1 (sebagian besar rendah)
         ref, utm, _w = rnd.choices(SOURCES, weights=[s[2] for s in SOURCES])[0]
         organic = "google" in ref
@@ -86,7 +86,7 @@ def main() -> None:
         t = first
         made_lead = False
         for si in range(n_sessions):
-            sid = str(uuid.uuid4())
+            sid = str(uuid.UUID(int=rnd.getrandbits(128), version=4))
             pages = max(1, int(rnd.expovariate(1 / (1 + 5 * intent))))
             sess = VisitSession(session_id=sid, visitor_id=vid, started_at=t, ended_at=t,
                                 source=v.first_source if si == 0 else "direct",
