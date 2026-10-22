@@ -1,0 +1,45 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#fff;color:#1f2933}
+.wrap{width:1100px;padding:24px;display:grid;grid-template-columns:330px 90px 1fr;gap:0;align-items:stretch}
+.col{border:2px solid #9aa5b1;border-radius:14px;padding:14px;background:#f8fafc}
+.col h3{margin:0 0 10px;font-size:17px;text-align:center}
+.box{border:1.5px solid #0b7a4b;background:#fff;border-radius:9px;padding:9px 11px;margin-bottom:9px;font-size:13.5px;line-height:1.35}
+.box b{display:block;font-size:14.5px;margin-bottom:2px;color:#0b5c39}
+.gray{border-color:#64707d}.gray b{color:#334}
+.arrows{display:flex;flex-direction:column;justify-content:space-around;align-items:center;font-size:12px;text-align:center;color:#334}
+.arr{display:flex;flex-direction:column;align-items:center}
+.arr span{font-size:26px;line-height:1;color:#0b7a4b}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.grid .box{margin:0}
+.db{border:1.5px solid #2b6cb0;background:#eef5fd}.db b{color:#1e4e8c}
+.ext{margin-top:14px;border:2px dashed #b7791f;border-radius:12px;padding:10px;background:#fffaf0;font-size:13.5px}
+</style></head><body><div class="wrap">
+<div class="col"><h3>Website mitra (ysii.org)</h3>
+ <div class="box gray"><b>Halaman program pelatihan</b>Konten SEO, schema markup Course</div>
+ <div class="box"><b>tracker.js (1 baris script)</b>Banner persetujuan cookie · rekam perilaku · kode referensi WhatsApp</div>
+ <div class="box gray"><b>Form pendaftaran (yang sudah ada)</b>Isi form disalin otomatis ke sistem</div>
+ <div class="box gray"><b>Tombol WhatsApp</b>Pesan otomatis berisi “(Kode: XXXXXX)”</div>
+ <div class="box"><b>Widget rekomendasi</b>Program &amp; ajakan sesuai minat</div>
+ <div class="ext"><b>Pengunjung / calon peserta</b><br>HP atau komputer, datang dari Google, media sosial, atau langsung</div>
+</div>
+<div class="arrows">
+ <div class="arr">perilaku<span>➜</span>/v1/collect</div>
+ <div class="arr">data form<span>➜</span>/v1/leads</div>
+ <div class="arr">rekomendasi<span>⬅</span>/v1/recommend</div>
+</div>
+<div class="col"><h3>Server sistem (api.ysii.org) — Docker</h3>
+ <div class="grid">
+  <div class="box"><b>1. SEO Engine</b>ETL Google Search Console harian, analisis kata kunci &amp; CTR</div>
+  <div class="box"><b>2. Behavior Tracking</b>Sesi, waktu aktif, scroll, klik, sumber traffic</div>
+  <div class="box"><b>3. ML Predictive Engine</b>Logistic Regression · Random Forest · Gradient Boosting</div>
+  <div class="box"><b>4. Dashboard Lead</b>Skor Hot/Warm/Cold, perjalanan pengunjung, status follow-up</div>
+  <div class="box"><b>5. Pendaftaran Terintegrasi</b>Form website &amp; chat WhatsApp → lead terhubung</div>
+  <div class="box"><b>6. Rekomendasi Konten</b>Program serupa + CTA per segmen</div>
+ </div>
+ <div class="grid" style="margin-top:9px">
+  <div class="box db"><b>PostgreSQL</b>visitors · sessions · events · leads · programs · predictions · gsc_daily · model_registry</div>
+  <div class="box db"><b>Scheduler</b>06.00 WIB: tarik data GSC<br>Senin 02.00 WIB: latih ulang model</div>
+ </div>
+ <div class="ext"><b>Admin mitra</b> membuka dashboard di browser → menghubungi lead → mengisi status (terdaftar/bayar/batal) → status menjadi <b>data latih baru</b> (closed-loop learning)<br><b>Google Search Console</b> → data klik, impresi, posisi kata kunci</div>
+</div>
+</div></body></html>
