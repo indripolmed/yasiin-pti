@@ -10,3 +10,8 @@ backend/models/*.json
 secrets/
 nginx/certbot/
 nginx/templates/https.inc.template
+# data & hasil analisis notebook (data nyata tidak di-commit)
+backend/notebooks/data/*
+!backend/notebooks/data/.gitkeep
+backend/notebooks/hasil/
+backend/notebooks/.ipynb_checkpoints/

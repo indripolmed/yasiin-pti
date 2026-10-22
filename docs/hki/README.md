@@ -4,7 +4,12 @@
 |---|---|
 | `Manual-Book-Sistem-Promosi-Digital-SEO-ML-v1.0.pdf` | Manual book (contoh ciptaan) untuk diunggah ke e-hakcipta DJKI |
 | `Manual-Book-Sistem-Promosi-Digital-SEO-ML-v1.0.docx` | Versi Word yang dapat diedit |
+| `Deskripsi-Program-Komputer.pdf` / `.docx` | Data ciptaan, **uraian singkat untuk formulir DJKI**, fungsi, keunggulan, spesifikasi teknis, daftar berkas kode |
+| `Kode-Sumber-Halaman-Awal-dan-Akhir.pdf` | Contoh ciptaan berupa kode sumber: sampul + 10 halaman awal + 10 halaman akhir |
+| `Kode-Sumber-Lengkap.pdf` | Listing kode sumber lengkap bernomor baris (56 halaman), sebagai arsip / bila diminta |
 | `sumber/` | Skrip untuk membuat ulang manual (screenshot, diagram, dokumen) |
+
+Dokumen lain dibuat ulang dengan skrip di `docs/sumber-dokumen/` (mis. `node build_kode_sumber.js <repo> <output> 10` bila kode berubah; ubah angka 10 jika sentra HKI meminta jumlah halaman lain).
 
 ## Periksa sebelum mengunggah
 
@@ -20,7 +25,7 @@ Semua screenshot memakai **data simulasi** (nama "Calon Peserta …", "Rina Prat
 1. Formulir permohonan dan surat pernyataan kepemilikan ciptaan bermeterai
 2. Surat pengalihan hak dari pencipta kepada Politeknik Negeri Medan
 3. KTP seluruh pencipta
-4. Contoh ciptaan: **manual book ini** dan **potongan kode sumber** (halaman awal dan akhir)
+4. Contoh ciptaan: **manual book** dan **potongan kode sumber** (halaman awal dan akhir) — keduanya sudah tersedia di folder ini
 5. Bukti pembayaran PNBP
 
 ## Membuat ulang manual

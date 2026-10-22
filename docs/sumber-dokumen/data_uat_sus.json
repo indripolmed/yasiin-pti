@@ -1,0 +1,88 @@
+{
+  "sus_ref": "Sharfina, Z., & Santoso, H. B. (2016). An Indonesian adaptation of the System Usability Scale (SUS). International Conference on Advanced Computer Science and Information Systems (ICACSIS), 145–148",
+  "sus_items": [
+    "Saya berpikir akan menggunakan sistem ini lagi.",
+    "Saya merasa sistem ini rumit untuk digunakan.",
+    "Saya merasa sistem ini mudah digunakan.",
+    "Saya membutuhkan bantuan dari orang lain atau teknisi dalam menggunakan sistem ini.",
+    "Saya merasa fitur-fitur sistem ini berjalan dengan semestinya.",
+    "Saya merasa ada banyak hal yang tidak konsisten (tidak serasi) pada sistem ini.",
+    "Saya merasa orang lain akan memahami cara menggunakan sistem ini dengan cepat.",
+    "Saya merasa sistem ini membingungkan.",
+    "Saya merasa tidak ada hambatan dalam menggunakan sistem ini.",
+    "Saya perlu membiasakan diri terlebih dahulu sebelum menggunakan sistem ini."
+  ],
+  "uat": [
+    {
+      "code": "A", "title": "Akses Dashboard",
+      "items": [
+        {"id": "A01", "critical": true, "name": "Login dengan akun benar", "steps": "Buka alamat dashboard, isi username & password yang benar, klik Masuk.", "expected": "Masuk ke menu Ringkasan; nama menu tampil di bagian atas."},
+        {"id": "A02", "name": "Login dengan password salah", "steps": "Isi password yang salah, klik Masuk.", "expected": "Muncul pesan \"Username atau password salah\"; tetap di halaman login."},
+        {"id": "A03", "name": "Keluar", "steps": "Klik tombol Keluar.", "expected": "Kembali ke halaman login; menu tidak dapat dibuka tanpa login ulang."}
+      ]
+    },
+    {
+      "code": "B", "title": "Ringkasan (KPI)",
+      "items": [
+        {"id": "B01", "name": "Menampilkan KPI", "steps": "Buka menu Ringkasan.", "expected": "Kartu pengunjung, sesi organik, lead baru, menjadi peserta, konversi, dan lead HOT tampil dengan angka."},
+        {"id": "B02", "name": "Mengganti periode", "steps": "Pilih periode 7 hari, lalu 90 hari.", "expected": "Angka dan grafik berubah sesuai periode yang dipilih."},
+        {"id": "B03", "name": "Grafik & sumber traffic", "steps": "Perhatikan grafik harian, segmen lead, dan tabel sumber traffic.", "expected": "Grafik tampil tanpa error; sumber traffic menampilkan pasangan sumber/medium dan jumlah sesi."}
+      ]
+    },
+    {
+      "code": "C", "title": "Manajemen Lead",
+      "items": [
+        {"id": "C01", "critical": true, "name": "Daftar lead terurut skor", "steps": "Buka menu Lead.", "expected": "Lead berstatus berjalan tampil berurutan dari skor tertinggi beserta label Hot/Warm/Cold."},
+        {"id": "C02", "name": "Pencarian", "steps": "Ketik sebagian nama atau nomor HP lead uji pada kotak pencarian.", "expected": "Hanya lead yang cocok yang tampil."},
+        {"id": "C03", "name": "Penyaringan", "steps": "Pilih segmen Hot, lalu salah satu program, lalu status \"Semua status\".", "expected": "Daftar menyesuaikan setiap filter; jumlah lead di bawah tabel berubah."},
+        {"id": "C04", "critical": true, "name": "Detail lead", "steps": "Klik salah satu lead.", "expected": "Tampil skor, kontak, program, sumber pertama, kode WA, faktor pendorong skor, riwayat sesi, dan aktivitas."},
+        {"id": "C05", "critical": true, "name": "Mengubah status", "steps": "Ubah status lead uji menjadi \"dihubungi\", muat ulang halaman (F5).", "expected": "Status tetap \"dihubungi\" setelah halaman dimuat ulang."},
+        {"id": "C06", "name": "Catatan follow-up", "steps": "Di detail lead, isi catatan lalu klik Simpan; buka kembali lead tersebut.", "expected": "Catatan tersimpan dan tampil kembali."},
+        {"id": "C07", "name": "Tombol WhatsApp", "steps": "Klik tombol WhatsApp pada baris lead.", "expected": "WhatsApp terbuka dengan nomor lead dan pesan pembuka."},
+        {"id": "C08", "critical": true, "name": "Mencatat lead dari WhatsApp", "steps": "Kirim chat dari tombol WA di website (lihat P04), lalu di dashboard klik \"+ Lead dari WhatsApp\" dan isi nama, nomor, kode referensi dari chat.", "expected": "Lead tersimpan dengan kanal \"whatsapp\", mendapat skor, dan detailnya menampilkan riwayat kunjungan."},
+        {"id": "C09", "name": "Kode referensi salah", "steps": "Ulangi C08 dengan kode \"ZZZZZZ\".", "expected": "Muncul pesan \"Kode referensi ZZZZZZ tidak ditemukan\"; lead tidak tersimpan."},
+        {"id": "C10", "name": "Unduh CSV", "steps": "Klik Unduh CSV lalu buka berkasnya di Excel/Google Sheets.", "expected": "Berkas berisi daftar lead dengan kolom nama, kontak, program, status, skor, segmen."}
+      ]
+    },
+    {
+      "code": "D", "title": "Program Pelatihan",
+      "items": [
+        {"id": "D01", "name": "Menambah program", "steps": "Isi slug, nama, harga, URL, batch berikutnya; klik Simpan.", "expected": "Program baru muncul di tabel program dan di pilihan program pada menu Lead."},
+        {"id": "D02", "name": "Mengubah program", "steps": "Klik Ubah, ganti tanggal batch, Simpan.", "expected": "Tanggal batch di tabel berubah."},
+        {"id": "D03", "name": "Menghapus program", "steps": "Klik Hapus pada program uji, konfirmasi.", "expected": "Program hilang dari tabel."}
+      ]
+    },
+    {
+      "code": "E", "title": "SEO dan Model Machine Learning",
+      "items": [
+        {"id": "E01", "name": "Data SEO", "steps": "Buka menu SEO.", "expected": "Tampil klik, impresi, CTR, rata-rata posisi, tren harian, kata kunci & halaman teratas (data Search Console)."},
+        {"id": "E02", "name": "Informasi model", "steps": "Buka menu Model ML.", "expected": "Tampil jumlah data berlabel serta model aktif atau keterangan skor berbasis aturan untuk tiap tugas."},
+        {"id": "E03", "name": "Latih ulang model", "steps": "Pilih \"Semua model\", klik Latih ulang model, tunggu.", "expected": "Muncul hasil pelatihan (versi model baru) atau pesan data belum cukup; tidak ada error."},
+        {"id": "E04", "name": "Mengganti model aktif", "steps": "Jika ada lebih dari satu versi: klik Aktifkan pada versi lain, atau klik \"Kembali ke skor aturan\".", "expected": "Model aktif berubah sesuai pilihan."}
+      ]
+    },
+    {
+      "code": "P", "title": "Website Mitra (Sisi Pengunjung)",
+      "note": "Dilakukan pada halaman program di website mitra menggunakan jendela penyamaran (incognito) agar dianggap pengunjung baru.",
+      "items": [
+        {"id": "P01", "critical": true, "name": "Banner persetujuan cookie", "steps": "Buka halaman program di jendela penyamaran.", "expected": "Banner persetujuan muncul di bagian bawah dengan tombol Tolak dan Setuju serta tautan kebijakan privasi."},
+        {"id": "P02", "name": "Menolak cookie", "steps": "Klik Tolak, lalu pindah ke halaman lain.", "expected": "Banner hilang dan tidak muncul lagi; website berfungsi normal."},
+        {"id": "P03", "critical": true, "name": "Menyetujui cookie", "steps": "Di jendela penyamaran baru, klik Setuju, lalu baca halaman program sampai bawah.", "expected": "Banner hilang; website berfungsi normal."},
+        {"id": "P04", "critical": true, "name": "Kode referensi WhatsApp", "steps": "Klik tombol WhatsApp di website.", "expected": "Pesan WhatsApp yang terbentuk diakhiri \"(Kode: XXXXXX)\"."},
+        {"id": "P05", "critical": true, "name": "Form pendaftaran tetap berjalan", "steps": "Isi form pendaftaran dengan data uji, kirim.", "expected": "Form diproses seperti biasa oleh website (pesan sukses / halaman terima kasih)."},
+        {"id": "P06", "critical": true, "name": "Lead tercatat di dashboard", "steps": "Buka menu Lead setelah P05, cari nama data uji.", "expected": "Lead muncul paling lambat 1 menit, dengan skor, dan detailnya berisi aktivitas dari P03–P05."},
+        {"id": "P07", "name": "Widget rekomendasi", "steps": "Lihat bagian widget rekomendasi pada halaman program (jika dipasang).", "expected": "Tampil daftar program lain dan tombol ajakan."},
+        {"id": "P08", "name": "Form pencarian tidak menjadi lead", "steps": "Gunakan kotak pencarian website.", "expected": "Tidak ada lead baru di dashboard dari pencarian tersebut."},
+        {"id": "P09", "name": "Tampilan ponsel & kecepatan", "steps": "Buka website di ponsel; uji halaman program di PageSpeed Insights.", "expected": "Tampilan normal; skor PageSpeed tidak turun berarti dibanding sebelum pemasangan."}
+      ]
+    },
+    {
+      "code": "I", "title": "Integrasi Data",
+      "items": [
+        {"id": "I01", "name": "Sumber kunjungan", "steps": "Cari website mitra di Google, buka dari hasil pencarian, setujui cookie, kirim form uji; buka detail lead.", "expected": "Sumber pertama tercatat \"google / organic\"."},
+        {"id": "I02", "name": "Pencegahan lead ganda", "steps": "Kirim form yang sama dua kali dalam 5 menit.", "expected": "Hanya satu lead tercatat untuk nomor tersebut."},
+        {"id": "I03", "name": "Pembaruan data SEO", "steps": "Periksa tanggal terakhir pada grafik di menu SEO.", "expected": "Data terbaru berumur paling lama 3–4 hari (keterlambatan normal Search Console)."}
+      ]
+    }
+  ]
+}
